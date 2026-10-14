@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Вероника Михайлова — Graphic Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400&family=Onest:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F7F6F2;--bg2:#ECEBE7;--ink:#20201E;--mute:#777773;--lav:#DCD6F7;--sky:#D5E5F2;
+--R:clamp(2rem,7vw,6rem);--d:'Unbounded','Arial Black',sans-serif;--b:'Onest','Helvetica Neue',Arial,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:6rem;height:100%}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:300 1rem/1.65 var(--b);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--ink);outline-offset:4px;border-radius:6px}
+.wrap{max-width:1320px;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem)}
+.ul{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .4s ease;padding-bottom:3px}
+.ul:hover,.ul:focus-visible{background-size:100% 1px}
+.pill{display:inline-flex;align-items:center;gap:.6rem;padding:.85rem 1.6rem;border-radius:999px;background:var(--ink);color:var(--bg);font-size:.92rem;transition:background .35s,color .35s}
+.pill:hover,.pill:focus-visible{background:var(--bg);color:var(--ink)}
+
+/* glass pill nav */
+header{position:fixed;top:calc(env(safe-area-inset-top,0px) + .9rem);left:0;right:0;z-index:10;display:flex;justify-content:center;padding:0 1rem;pointer-events:none}
+nav{pointer-events:auto;display:flex;gap:clamp(.9rem,3vw,2.2rem);padding:.8rem clamp(1.1rem,3vw,2.2rem);border-radius:999px;background:rgba(247,246,242,.62);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(32,32,30,.12);font-size:.9rem}
+nav a[aria-current=true]{color:var(--mute)}
+
+/* hero */
+.hero{min-height:100vh;min-height:100svh;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:8rem 0 2rem;overflow:hidden;background:var(--lav);border-radius:0 0 var(--R) var(--R)}
+.arch{position:absolute;right:clamp(1rem,8vw,9rem);top:11vh;width:clamp(13rem,30vw,27rem);aspect-ratio:3/4;z-index:0;will-change:transform}
+.arch i{position:absolute;display:block}
+.arch .a{inset:0;background:var(--bg);border-radius:999px 999px 1.5rem 1.5rem}
+.arch .o{width:46%;aspect-ratio:1;border-radius:50%;background:var(--sky);left:-24%;bottom:9%}
+.arch .r{width:70%;aspect-ratio:1;border-radius:50%;border:1px solid var(--ink);right:-22%;top:16%}
+.hero h1{font:300 clamp(1.5rem,5.6vw,5.6rem)/1.12 var(--d);margin:0;letter-spacing:-.02em;position:relative;z-index:2}
+.hero h1 span{display:block;opacity:0;transform:translateY(26px);animation:up 1s .15s cubic-bezier(.2,.7,.2,1) forwards}
+.hero h1 span:nth-child(2){padding-left:clamp(0rem,10vw,11rem);animation-delay:.35s}
+@keyframes up{to{opacity:1;transform:none}}
+.hero-meta{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;margin-top:clamp(2rem,5vw,3.5rem);flex-wrap:wrap;position:relative;z-index:2}
+.name{margin:0 0 .5rem;font-size:.95rem}
+.sub{max-width:28rem;color:#4a4a47;margin:0;font-size:1.05rem}
+.scroll{display:flex;align-items:center;gap:.8rem;font-size:.8rem;color:#4a4a47}
+.scroll i{display:block;width:1px;height:3rem;background:rgba(32,32,30,.18);position:relative;overflow:hidden}
+.scroll i::after{content:"";position:absolute;left:0;top:-50%;width:1px;height:50%;background:var(--ink);animation:drip 2.4s ease-in-out infinite}
+@keyframes drip{to{top:100%}}
+
+/* sections */
+section{padding:clamp(5rem,10vw,9rem) 0}
+h2{font:300 clamp(1.8rem,5vw,4.4rem)/1.1 var(--d);margin:0 0 clamp(3rem,7vw,6rem);letter-spacing:-.02em}
+.work{margin-bottom:clamp(4rem,9vw,8rem)}
+.work:last-child{margin-bottom:0}
+.media{position:relative;overflow:hidden;background:var(--bg2);border-radius:1.75rem}
+.media>*{transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.work:hover .media>*{transform:scale(1.035)}
+.media img,.ph{width:100%;height:100%;object-fit:cover;display:block}
+.ph{display:grid;place-items:center;position:relative}
+.cap{display:flex;gap:1rem;align-items:baseline;margin-top:1.25rem;flex-wrap:wrap}
+.cap .n{font:300 1.1rem/1 var(--d)}
+.cap h3{font:400 1.15rem var(--b);margin:0}
+.cap .t{color:var(--mute);font-size:.9rem;padding:.2rem .8rem;border:1px solid rgba(32,32,30,.18);border-radius:999px}
+.desc{color:var(--mute);margin:.5rem 0 0;max-width:30rem}
+/* 01 wide */
+.w1 .media{aspect-ratio:21/9;min-height:14rem}
+.w1 .ph{background:var(--lav)}
+.w1 .ph .c1{position:absolute;left:8%;top:50%;width:min(46%,26rem);aspect-ratio:1;border-radius:50%;background:var(--bg);transform:translateY(-50%)}
+.w1 .ph .c2{position:absolute;left:calc(8% + min(46%,26rem)*.55);top:50%;width:min(46%,26rem);aspect-ratio:1;border-radius:50%;border:1px solid var(--ink);transform:translateY(-50%)}
+.w1 .ph b{position:absolute;right:6%;bottom:2%;font:300 clamp(3rem,12vw,10rem)/1 var(--d);color:var(--bg)}
+/* 02 asym, arch */
+.w2{display:grid;grid-template-columns:repeat(12,1fr);gap:0 clamp(1rem,3vw,2.5rem);align-items:end}
+.w2 .media{grid-column:2/8;aspect-ratio:4/5;border-radius:999px 999px 1.75rem 1.75rem}
+.w2 .info{grid-column:8/13;padding-bottom:1rem}
+.w2 .ph{background:var(--lav)}
+.w2 .ph .r{position:absolute;left:20%;right:20%;top:18%;bottom:34%;background:var(--bg);border-radius:999px 999px 0 0}
+.w2 .ph .s{position:absolute;left:12%;width:30%;aspect-ratio:1;bottom:10%;border-radius:50%;background:var(--sky)}
+/* 03 type */
+.w3 .media{aspect-ratio:16/9;min-height:14rem;border-radius:999px}
+.w3 .ph{background:var(--lav)}
+.w3 .ph b{font:300 clamp(5rem,24vw,20rem)/.8 var(--d);letter-spacing:-.06em;color:var(--bg)}
+.w3 .cap{justify-content:center}.w3 .desc{margin-left:auto;margin-right:auto;text-align:center}
+
+/* about: big rounded block */
+#about{background:var(--bg2);border-radius:var(--R) var(--R) 0 0;padding-top:clamp(4rem,8vw,7rem);padding-bottom:calc(var(--R) + 4rem);position:relative}
+#about h2{text-align:center;margin-bottom:clamp(2.5rem,5vw,4rem)}
+.about{display:grid;grid-template-columns:repeat(12,1fr);gap:2.5rem clamp(1rem,3vw,2.5rem);align-items:start}
+.facts{grid-column:1/6;display:grid;gap:.8rem;justify-items:start}
+.chip{padding:.9rem 1.6rem;border-radius:999px;background:var(--bg);font-size:1rem}
+.chip.l{background:var(--lav)}
+.sig{margin-top:1.5rem;font:italic 300 1.8rem/1 Georgia,serif;color:var(--mute)}
+.about-text{grid-column:7/-1;border-top:1px solid var(--ink);padding-top:1.5rem;position:relative}
+.about-text p{font:300 clamp(1.15rem,2vw,1.55rem)/1.5 var(--b);margin:0;max-width:30rem}
+
+/* contact */
+#contact{background:var(--lav);border-radius:var(--R) var(--R) 0 0;margin-top:calc(var(--R)*-1);position:relative;padding-bottom:0}
+#contact h2{font-size:clamp(1.6rem,5.6vw,5rem);margin-bottom:1.5rem}
+#contact h2 span{display:block}
+#contact h2 span:nth-child(2){padding-left:clamp(0rem,8vw,9rem)}
+.lead{color:#4a4a47;margin:0 0 clamp(2.5rem,5vw,4rem);max-width:30rem}
+.links{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.links a{display:flex;flex-direction:column;gap:.3rem;padding:1.4rem 1.8rem;border-radius:1.75rem;background:var(--bg);transition:background .35s,color .35s,transform .35s;min-width:0}
+.links a:hover,.links a:focus-visible{background:var(--ink);color:var(--bg);transform:translateY(-3px)}
+.links a:hover .k,.links a:focus-visible .k{color:var(--lav)}
+.links .k{font-size:.85rem;color:var(--mute)}
+.links .v{font:300 clamp(.8rem,1.7vw,1.25rem)/1.3 var(--d);overflow-wrap:anywhere}
+.links .v.todo{color:var(--mute)}
+.stage{--fs:min(15vw,12.5rem);position:relative;overflow:hidden;margin-top:clamp(3rem,7vw,6rem);height:calc(var(--fs)*.84);user-select:none}
+.stage i{position:absolute;border-radius:50%;display:block}
+.stage .s1{z-index:2;width:calc(var(--fs)*2);aspect-ratio:1;border:1px solid var(--ink);left:3%;top:calc(var(--fs)*-.5)}
+.stage .s2{width:calc(var(--fs)*1.15);aspect-ratio:1;background:var(--sky);right:7%;top:calc(var(--fs)*-.1)}
+.stage .word{position:absolute;left:0;right:0;top:0;text-align:center;font:300 var(--fs)/1 var(--d);letter-spacing:-.03em;color:var(--bg);white-space:nowrap}
+
+footer{background:var(--lav);padding:1.5rem 0 2rem;font-size:.9rem;color:#4a4a47}
+footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center}
+footer b{color:var(--ink);font-weight:400}
+
+.rv{opacity:0;transform:translateY(18px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.clip{clip-path:inset(0 0 100% 0);transition:clip-path 1.2s cubic-bezier(.7,0,.2,1)}
+.clip.in{clip-path:inset(0 0 0 0)}
+@media (prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+*,*::before,*::after{animation:none!important;transition:none!important}
+.rv,.clip,.hero h1 span{opacity:1;transform:none;clip-path:none}
+.work:hover .media>*{transform:none}
+}
+@media (max-width:760px){
+.arch{top:10vh;right:-2rem}
+.w2 .media,.w2 .info{grid-column:1/-1}.w2 .info{margin-top:1.25rem}
+.w1 .media{aspect-ratio:4/3}
+.w3 .media{aspect-ratio:4/3;border-radius:999px}
+.facts,.about-text{grid-column:1/-1}
+.links{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<header><nav aria-label="Основная навигация">
+  <a class="ul" href="#top">Главная</a><a class="ul" href="#works">Работы</a><a class="ul" href="#about">Обо мне</a><a class="ul" href="#contact">Контакты</a>
+</nav></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+  <div class="arch" id="arch" aria-hidden="true"><i class="a"></i><i class="o"></i><i class="r"></i></div>
+  <h1><span>ВИЗУАЛЬНЫЕ ИДЕИ.</span><span>СМЫСЛ В ДЕТАЛЯХ.</span></h1>
+  <div class="hero-meta rv">
+    <div><p class="name"><strong style="font-weight:500">Вероника Михайлова</strong> — Graphic Designer</p>
+    <p class="sub">Создаю визуальные решения, исследую форму, типографику и графический язык.</p></div>
+    <a class="scroll" href="#works"><span>Прокрутите вниз</span><i></i></a>
+  </div>
+</div></div>
+
+<section id="works"><div class="wrap">
+  <h2 class="rv">Selected Works</h2>
+  <div id="works-list"></div>
+</div></section>
+
+<section id="about"><div class="wrap">
+  <h2 class="rv">About Me</h2>
+  <div class="about">
+    <div class="facts rv">
+      <span class="chip l">Вероника Михайлова</span><span class="chip">Graphic Designer</span>
+      <div class="sig" aria-hidden="true">В. М.</div>
+    </div>
+    <div class="about-text rv"><p id="about-text"></p></div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <h2 class="rv"><span>ЕСТЬ ИДЕЯ?</span><span>ДАВАЙТЕ ОБСУДИМ.</span></h2>
+  <p class="lead rv">Открыта новым идеям и интересным визуальным экспериментам.</p>
+  <ul class="links rv" id="links"></ul>
+  </div>
+  <div class="stage rv" aria-hidden="true"><i class="s1"></i><i class="s2"></i><div class="word">Veronika</div></div>
+</section>
+</main>
+
+<footer><div class="wrap">
+  <span><b>Вероника Михайлова</b> — Graphic Designer, © <span id="year"></span></span>
+  <a class="pill" href="#top">Наверх <span aria-hidden="true">↑</span></a>
+</div></footer>
+
+<script>
+/* ===== Контент: меняйте здесь ===== */
+const ABOUT = "Я молодой графический дизайнер и только начинаю свой путь в профессии. Ищу собственный почерк: пробую формы, играю с типографикой и учусь видеть смысл в деталях. Для меня каждый новый проект — возможность расти и экспериментировать.";
+
+/* image: путь или data-URL. Пока пусто — показывается заглушка (variant: wide | tall | type) */
+const WORKS = [
+  {n:"01", title:"Project 01", tag:"Graphic Design", desc:"Место для будущего описания проекта.", image:"", variant:"wide"},
+  {n:"02", title:"Project 02", tag:"Graphic Design", desc:"Место для будущего описания проекта.", image:"", variant:"tall"},
+  {n:"03", title:"Project 03", tag:"Graphic Design", desc:"Место для будущего описания проекта.", image:"", variant:"type"}
+];
+
+/* href пустой — заглушка */
+const CONTACTS = [
+  {k:"Email", v:"vm7266795@gmail.com", href:"mailto:vm7266795@gmail.com"},
+  {k:"Telegram", v:"@vvvthi", href:"https://t.me/vvvthi"}
+];
+/* ================================== */
+
+const ph = {
+  wide:'<div class="ph"><span class="c1"></span><span class="c2"></span><b>01</b></div>',
+  tall:'<div class="ph"><span class="r"></span><span class="s"></span></div>',
+  type:'<div class="ph"><b>Aa</b></div>'
+};
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+document.getElementById('works-list').innerHTML = WORKS.map(w=>{
+  const media = `<div class="media clip">${w.image ? `<img src="${esc(w.image)}" alt="${esc(w.title)}" loading="lazy">` : ph[w.variant]}</div>`;
+  const cap = `<div class="cap"><span class="n">${esc(w.n)}</span><h3>${esc(w.title)}</h3><span class="t">${esc(w.tag)}</span></div><p class="desc">${esc(w.desc)}</p>`;
+  return w.variant==='tall'
+    ? `<article class="work w2">${media}<div class="info rv">${cap}</div></article>`
+    : `<article class="work ${w.variant==='wide'?'w1':'w3'}">${media}<div class="rv">${cap}</div></article>`;
+}).join('');
+
+document.getElementById('about-text').textContent = ABOUT;
+
+document.getElementById('links').innerHTML = CONTACTS.map(c=>{
+  const tag = c.href ? `a href="${esc(c.href)}" target="_blank" rel="noopener"` : `a href="#contact" aria-disabled="true" title="Заглушка: добавьте ссылку"`;
+  return `<li><${tag}><span class="k">${esc(c.k)}</span><span class="v ${c.href?'':'todo'}">${esc(c.v)}</span></a></li>`;
+}).join('');
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const els = document.querySelectorAll('.rv,.clip');
+if ('IntersectionObserver' in window) {
+  const map = new Map();
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ map.get(e.target).forEach(x => x.classList.add('in')); io.unobserve(e.target);} }), {threshold:.15});
+  els.forEach(e => { const t = e.classList.contains('clip') ? e.parentElement : e; map.set(t, [...(map.get(t)||[]), e]); io.observe(t); });
+} else els.forEach(e => e.classList.add('in'));
+
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const arch = document.getElementById('arch');
+let tick = false;
+addEventListener('scroll', () => {
+  if (tick) return; tick = true;
+  requestAnimationFrame(() => {
+    if (!reduce && scrollY < innerHeight * 1.2) arch.style.transform = `translateY(${scrollY*.12}px)`;
+    tick = false;
+  });
+}, {passive:true});
+
+const links = [...document.querySelectorAll('nav a')];
+const secs = ['top','works','about','contact'].map(id => document.getElementById(id));
+const so = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) links.forEach((l,i) => secs[i]===e.target ? l.setAttribute('aria-current','true') : l.removeAttribute('aria-current'));
+}), {rootMargin:'-45% 0px -50% 0px'});
+secs.forEach(s => s && so.observe(s));
+</script>
+</body>
+</html>
